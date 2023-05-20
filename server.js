@@ -16,10 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-// app.use("/api/v1/users", require("./routes/userRoute"));
-app.get("/", (req, res) => {
-  res.send("<h1>Hi guys</h1>");
-});
+app.use("/api/v1/users", require("./routes/userRoute"));
 
 const PORT = 8080 || process.env.PORT;
 
