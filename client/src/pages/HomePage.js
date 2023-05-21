@@ -216,7 +216,7 @@ const HomePage = () => {
               },
             ]}
           >
-            <Input type="text" />
+            <Input type="number" />
           </Form.Item>
           <Form.Item
             label="Type"
