@@ -7,7 +7,7 @@
 - Node.js
 - Express.js
 - React.js
-- MongoDb Cloudo
+- MongoDb Cloud
 
 ## To setup locally
 
