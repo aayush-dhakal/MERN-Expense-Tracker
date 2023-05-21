@@ -18,3 +18,21 @@
 ## Screenshots
 
 ### Registration
+
+![](https://github.com/aayush-dhakal/MERN-Expense-Tracker/blob/master/screenshots/register.png?raw=true)
+
+### Login
+
+![](https://github.com/aayush-dhakal/MERN-Expense-Tracker/blob/master/screenshots/login.png?raw=true)
+
+### Dashboard Portal
+
+![](https://github.com/aayush-dhakal/MERN-Expense-Tracker/blob/master/screenshots/homepage.png?raw=true)
+
+### Add Transactions
+
+![](https://github.com/aayush-dhakal/MERN-Expense-Tracker/blob/master/screenshots/add-new.png?raw=true)
+
+### Analytics
+
+![](https://github.com/aayush-dhakal/MERN-Expense-Tracker/blob/master/screenshots/analytics.png?raw=true)
