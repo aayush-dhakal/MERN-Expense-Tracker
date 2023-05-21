@@ -72,30 +72,30 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       const res = await axios.get(
-        `/transactions?userid=${user._id}&frequency=${frequency}&type=${type}`
+        `/api/v1/transactions?userid=${user._id}&frequency=${frequency}&type=${type}`
       );
       setLoading(false);
       setAllTransaction(res.data);
     } catch (error) {
       console.log(error);
-      message.error("Problem fetching the tranctions");
+      message.error("Problem fetching the transactions");
     }
   };
 
   useEffect(() => {
     getAllTransactions();
-    // form.resetFields();
     form.setFieldsValue(editable); // setting the initial state for form
+    // eslint-disable-next-line
   }, [frequency, type, form, editable]);
 
-  // form handling
+  // form submit handler
   const handleSubmit = async (values) => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
 
       if (editable) {
-        await axios.put(`/transactions?transacationId=${editable._id}`, {
+        await axios.put(`/api/v1/transactions?transacationId=${editable._id}`, {
           payload: {
             ...values,
             userId: user._id,
@@ -104,7 +104,7 @@ const HomePage = () => {
         setLoading(false);
         message.success("Transaction Added Successfully");
       } else {
-        await axios.post("/transactions", {
+        await axios.post("/api/v1/transactions", {
           ...values,
           userid: user._id,
         });
@@ -127,7 +127,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.delete(`/transactions?transacationId=${record._id}`);
+      await axios.delete(`/api/v1/transactions?transacationId=${record._id}`);
       setLoading(false);
       message.success("Transaction Deleted!");
       getAllTransactions();
