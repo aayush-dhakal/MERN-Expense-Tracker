@@ -5,17 +5,14 @@ const getAllTransaction = async (req, res) => {
   try {
     const { frequency, type, userid } = req.query;
     const transactions = await transactionModel.find({
-      // date: {
-      //   $gte: moment().subtract(Number(frequency), "d").toDate(),
-      // },
       userid,
-      ...(type !== "all" && { type }),
-      // if date is not specified then find all transcations
+      // if date is not specified then find all transcations by not adding date filter
       ...(frequency !== "" && {
         date: {
           $gte: moment().subtract(Number(frequency), "d").toDate(),
         },
       }),
+      ...(type !== "all" && { type }),
     });
     res.status(200).json(transactions);
   } catch (error) {
