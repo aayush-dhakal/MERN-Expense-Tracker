@@ -138,8 +138,6 @@ const HomePage = () => {
     }
   };
 
-  console.log("editable...", editable);
-
   return (
     <Layout>
       {loading && <Spinner />}
